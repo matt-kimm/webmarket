@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* Цветовые константы */
+:root {
+    --bg-color: #f1f2f4;
+    --text-color: rgb(0, 0, 0);
+    --white: #fff;
+    --primary-color: #754BF3;
+    --secondary-text: #888;
+    --footer-bg: #fff;
+    --product-card-size: 145px;
+    --product-card-height: 240px;
+
+    /* Ссылки на иконки */
+    --folder-icon: url('../img/folder.png');
+    --folder-hover-icon: url('../img/folder-hover.png');
+    --home-icon: url('../img/home.png');
+    --home-hover-icon: url('../img/home-hover.png');
+    --cart-icon: url('../img/cart.png');
+    --cart-hover-icon: url('../img/cart-hover.png');
+    --profile-icon: url('../img/profile.png');
+    --profile-hover-icon: url('../img/profile-hover.png');
+    --search-icon: url('../img/searcher.png');
+    --filter-icon: url('../img/filter.png');
+
+    /* Шрифт */
+    --main-font: 'Manrope', sans-serif;
+
+    /* Размеры шрифтов */
+    --font-size-h3: 13px;
+    --font-size-price: 15px;
+    --font-size-old-price: 9px;
+}
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--main-font);
+    font-weight: 300;
+    font-size: 10px;
+}
+
+/* Стили шапки */
+.header {
+    background-color: var(--bg-color);
+    padding: 15px 0;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: var(--main-font);
+}
+
+/* Стили основной части и боковой панели */
+main {
+    margin: 50px 100px;
+    width: 50%;
+    float: left;
+}
+
+aside {
+    width: 20%;
+    margin-top: 50px;
+    margin-left: 5%;
+    float: left;
+}
+
+/* Стили для поиска */
+.container-search {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 45px;
+    border: none;
+    border-radius: 100px;
+    background-image: var(--search-icon);
+    background-repeat: no-repeat;
+    background-position: left 13px center;
+    background-size: 22px 21px;
+    font-family: var(--main-font);
+}
+
+.search-input.focused {
+    background-color: #112534;
+    color: var(--white);
+    outline: none;
+}
+
+/* Стили для фильтра */
+.filter-button {
+    padding: 18px;
+    background-color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: var(--filter-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 19px;
+}
+
+.filter-button:hover {
+    background-color: var(--bg-color);
+}
+
+/* Стили для товаров */
+.container-item {
+    display: grid;
+    grid-template-columns: repeat(2, var(--product-card-size));
+    grid-template-rows: repeat(2, var(--product-card-height));
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.product-card {
+    position: relative;
+    padding: 5px;
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    border-radius: 15px;
+    width: var(--product-card-size);
+    height: var(--product-card-height);
+    text-align: center;
+}
+
+.product-img {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 134px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*стили для описания */
+.prodact-description {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prodact-description h3 {
+    margin: 0;
+    font-size: var(--font-size-h3);
+    padding-bottom: 2px;
+    word-break: break-word;
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+/*стили для цен*/
+.price-container {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--main-font);
+}
+
+.main-price {
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: var(--font-size-price);
+    margin-right: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: var(--secondary-text);
+    font-size: var(--font-size-old-price);
+}
+
+/* Стили для футера */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--footer-bg);
+    color: var(--text-color);
+    padding: 15px;
+}
+
+.content {
+    width: 300px;
+    margin: 0 auto;
+    color: var(--text-color);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/*стили для кнопок в футере*/
+.folder-button,
+.home-button,
+.cart-button,
+.profile-button {
+    padding: 18px;
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.folder-button {
+    background-image: var(--folder-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px 34px;
+}
+
+.folder-button:hover {
+    background-image: var(--folder-hover-icon);
+}
+
+.home-button {
+    background-image: var(--home-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px 34px;
+}
+
+.home-button:hover {
+    background-image: var(--home-hover-icon);
+}
+
+.cart-button {
+    background-image: var(--cart-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px 34px;
+}
+
+.cart-button:hover {
+    background-image: var(--cart-hover-icon);
+}
+
+.profile-button {
+    background-image: var(--profile-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px 35px;
+}
+
+.profile-button:hover {
+    background-image: var(--profile-hover-icon);
+}
