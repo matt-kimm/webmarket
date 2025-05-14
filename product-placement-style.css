@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  /* Цвета */
+  --color-bg: #f1f2f4;
+  --color-text-primary: #091824;
+  --color-text-secondary: #888888;
+  --color-text-placeholder: #bdbdbd;
+  --color-text-muted: #aaa;
+  --color-error: #d80027;
+  --color-border-focus: #754bf3;
+  --color-button-bg: #091824;
+  --color-button-bg-hover: #754bf3;
+  --color-input-bg: #ffffff;
+  --color-upload-bg: #f7f8fa;
+
+  /* Шрифты и размеры */
+  --font-size-xs: 0.85em;      /* примерно 12px */
+  --font-size-sm: 0.98em;      /* примерно 14px */
+  --font-size-base: 1em;       /* примерно 16px */
+  --font-size-lg: 1.1em;       /* примерно 17.6px */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --font-weight-extra-bold: 800;
+
+  /* Шрифт */
+  --main-font: 'Manrope', sans-serif;
+
+  /* Радиусы */
+  --radius-pill: 30px;
+  --radius-card: 20px;
+  --radius-dropdown: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--main-font);
+}
+
+.app-container {
+  background: var(--color-bg);
+  border-radius: var(--radius-card);
+  max-width: 300px;
+  margin-bottom: 60px;
+  padding: 32px 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-text-primary);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-title {
+  font-size: 15px;
+  color: var(--color-text-primary);
+  font-weight: 450;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.span-color {
+  color: var(--color-error);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-base);
+  background: var(--color-input-bg);
+  color: var(--color-text-primary);
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s;
+  font-family: var(--main-font);
+  font-weight: 450;
+}
+
+
+
+input::placeholder {
+  font-family: var(--main-font);
+  color: #9597A6;
+  font-size: 12px;
+  font-weight: 450;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 12px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-input-bg);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+small {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+  display: block;
+}
+
+.required-note {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  margin: 8px 0 16px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 450;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: #091824;
+  color: var(--color-input-bg);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+  font-family: var(--main-font);
+}
+
+.submit-btn:hover {
+  background: #112534;
+}
+
+AutoResizeTextarea::placeholder{
+  color: #9597A6;
+  font-size: 12px;
+  font-weight: 450;
+}
+
+textarea {
+  word-break: break-word;      /* Переносит длинные слова */
+  overflow-wrap: break-word;   /* Альтернативный способ переноса */
+  white-space: pre-wrap;       /* Сохраняет переносы и переносит длинные слова */
+  resize: none;                /* Запретить ручное изменение размера, если нужно */
+  width: 100%;
+  min-height: 48px;            /* Минимальная высота, как у input */
+  border-radius: 40px;
+  padding: 16px 32px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #9597A6;
+  border: none;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+}
+
+.expandable-input {
+  width: 100%;
+  min-height: 24px;
+  max-height: 300px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  border: none;
+  color: #222;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 450;
+}
+
+.tips{
+  color: #d80027;
+  text-decoration: underline;
+  font-weight: 450;
+}
+
+.upload-icon{
+  background-image: url('../img/upload.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35px 34px;
+  padding-left: 20px;
+}
